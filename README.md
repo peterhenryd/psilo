@@ -17,8 +17,9 @@ Psilo is written in Rust, so [install Rust](https://rustup.rs) if you haven't al
 
 ### 🧑‍🔬 Things we'd like to implement
 
-An unorganized list of unique features we'd like to have down the road.
-- Static memory management through life-time inference.
+An unorganized list of unique features we'd like to have down the road:
+- static memory management through life-time inference.
+- 
 
 ### 🚧 Some things to note
 
@@ -27,6 +28,12 @@ Development disclaimer: Psilo specification (the rules of the language) and impl
 Psilo currently does not have a logo; the image found in this README (Apple's mushroom emoji) is a temporary signum, but it is in no way a logo, nor do we claim ownership of the image whatsoever.
 
 Pronounced "sillow" (like "willow" with an 's').
+
+### ⚒️ How to contribute
+
+Thank you for wanting to contribute to Psilo; we appreciate and encourage you to contribute. At the moment, there are no formal rules for contribution.
+
+Fork the project, write some stuff, open a pull request, and we'll take a look!
 
 ### 🔎 What code looks like
 
