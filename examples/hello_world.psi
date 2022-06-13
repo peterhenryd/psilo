@@ -1,0 +1,5 @@
+use std.io;
+
+fn hello_world() -> io {
+  println("Hello, world!");
+}
