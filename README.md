@@ -24,6 +24,6 @@ An unorganized list of unique features we'd like to have down the road.
 
 Development disclaimer: Psilo specification (the rules of the language) and implementation (the compiler) are both very work-in-progress. Everything is suspectible to changes, and early-adopters should not expect that anything stay the same from commit-to-commit.
 
-Psilo currently does not have a logo; the image found in this README (Apple's mushroom emoji) is a temporary signum, but it is in no way a logo.
+Psilo currently does not have a logo; the image found in this README (Apple's mushroom emoji) is a temporary signum, but it is in no way a logo, nor do we claim ownership of the image whatsoever.
 
 Pronounced "sillow" (like "willow" with an 's').
