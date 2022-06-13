@@ -27,3 +27,7 @@ Development disclaimer: Psilo specification (the rules of the language) and impl
 Psilo currently does not have a logo; the image found in this README (Apple's mushroom emoji) is a temporary signum, but it is in no way a logo, nor do we claim ownership of the image whatsoever.
 
 Pronounced "sillow" (like "willow" with an 's').
+
+### 🔎 What code looks like
+
+Have a look at [these examples](./examples) of Psilo programs!
