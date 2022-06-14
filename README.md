@@ -1,6 +1,13 @@
 # psilo
 
-<img src="https://github.com/peterhenryd/psilo/blob/91d3a475faba489b452754be6e682a5a96e3db6d/mushroom_emoji.png" alt="Mushroom emoji" width="200" align="right"/>
+<img src="https://github.com/peterhenryd/psilo/blob/91d3a475faba489b452754be6e682a5a96e3db6d/mushroom_emoji.png" alt="Mushroom emoji" width="250" align="right"/>
+
+![GitHub](https://img.shields.io/github/license/peterhenryd/psilo?color=red)
+![GitHub issues](https://img.shields.io/github/issues/peterhenryd/psilo?color=orange)
+![GitHub Repo stars](https://img.shields.io/github/stars/peterhenryd/psilo?color=yellow)
+![Lines of code](https://img.shields.io/tokei/lines/github/peterhenryd/psilo?color=green)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/peterhenryd/psilo?color=blue)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/peterhenryd/psilo/dev?color=purple)
 
 The psychoactive programming language! Psilo is an experimental language that grants novel methods of intuitive, scalable programming.
 
@@ -19,7 +26,7 @@ Psilo is written in Rust, so [install Rust](https://rustup.rs) if you haven't al
 
 An unorganized list of unique features we'd like to have down the road:
 - static memory management through life-time inference.
-- 
+- universe-based type/value instancing.
 
 ### 🚧 Some things to note
 
