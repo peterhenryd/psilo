@@ -9,7 +9,7 @@
 ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/peterhenryd/psilo?color=blue)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/peterhenryd/psilo/main?color=purple)
 
-The psychoactive programming language! Psilo is an experimental language that grants novel methods of intuitive, scalable programming.
+The psychoactive programming language! Psilo is an experimental language that grants novel methods of intuitive, scalable programming. Click [here](https://discord.gg/svqHSAqtJA) to join the community server (Discord). 
 
 ### 🏁 Goals for the project
 
@@ -32,7 +32,7 @@ An unorganized list of unique features we'd like to have down the road:
 
 Development disclaimer: Psilo specification (the rules of the language) and implementation (the compiler) are both very work-in-progress. Everything is suspectible to changes, and early-adopters should not expect that anything stay the same from commit-to-commit.
 
-Click [here](https://discord.gg/svqHSAqtJA) to join the community server (Discord). Pronounced "sillow" (like "willow" with an 's').
+Pronounced "sillow" (like "willow" with an 's').
 
 ### ⚒️ How to contribute
 
