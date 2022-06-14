@@ -2,7 +2,7 @@
 
 <img src="./md/logo.png" alt="Mushroom emoji" width="250" align="right"/>
 
-![GitHub](https://img.shields.io/github/license/peterhenryd/psilo?color=red)
+[![Discord](https://img.shields.io/discord/986142860090941440?color=red)](https://discord.gg/svqHSAqtJA)
 ![GitHub issues](https://img.shields.io/github/issues/peterhenryd/psilo?color=orange)
 ![GitHub Repo stars](https://img.shields.io/github/stars/peterhenryd/psilo?color=yellow)
 ![Lines of code](https://img.shields.io/tokei/lines/github/peterhenryd/psilo?color=green)
@@ -31,6 +31,8 @@ An unorganized list of unique features we'd like to have down the road:
 ### 🚧 Some things to note
 
 Development disclaimer: Psilo specification (the rules of the language) and implementation (the compiler) are both very work-in-progress. Everything is suspectible to changes, and early-adopters should not expect that anything stay the same from commit-to-commit.
+
+Click [here](https://discord.gg/svqHSAqtJA) to join the community server (Discord).
 
 Pronounced "sillow" (like "willow" with an 's').
 
