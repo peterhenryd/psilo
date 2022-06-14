@@ -32,9 +32,7 @@ An unorganized list of unique features we'd like to have down the road:
 
 Development disclaimer: Psilo specification (the rules of the language) and implementation (the compiler) are both very work-in-progress. Everything is suspectible to changes, and early-adopters should not expect that anything stay the same from commit-to-commit.
 
-Click [here](https://discord.gg/svqHSAqtJA) to join the community server (Discord).
-
-Pronounced "sillow" (like "willow" with an 's').
+Click [here](https://discord.gg/svqHSAqtJA) to join the community server (Discord). Pronounced "sillow" (like "willow" with an 's').
 
 ### ⚒️ How to contribute
 
