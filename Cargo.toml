@@ -1,0 +1,12 @@
+[package]
+name = "psilo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Error reporting
+codespan-reporting = "0.11.1"
+
+# Lexer
+logos = "0.12.1"
+
