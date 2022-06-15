@@ -4,8 +4,14 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+# Misc
+# home = "0.5.3"
+
+# Terminal
+# clap = "3.2.1"
+
 # Error reporting
-codespan-reporting = "0.11.1"
+# codespan-reporting = "0.11.1"
 
 # Lexer
 logos = "0.12.1"

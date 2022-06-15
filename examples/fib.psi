@@ -1,5 +1,5 @@
 # A weeee bit overdone with the generics, but we like to have fun!
-fn <I int> fib(i *I) -> *I {
+fn fib(i s32) -> s32 {
   when i {
     0 => 0,
     1 => 1,
