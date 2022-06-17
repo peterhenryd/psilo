@@ -1,4 +1,4 @@
-use std::fmt::{Display, Formatter, Write};
+use std::fmt::{Display, Formatter};
 use crate::lexer::Token;
 
 impl Token<'_> {
@@ -79,6 +79,9 @@ impl Token<'_> {
             Token::Shr => TokenId::Shr,
             Token::LogAnd => TokenId::LogAnd,
             Token::LogOr => TokenId::LogOr,
+            Token::Loop => TokenId::Loop,
+            Token::Question => TokenId::Question,
+            Token::ColonColon => TokenId::ColonColon,
         }
     }
 }
@@ -160,6 +163,9 @@ pub enum TokenId {
     Shr,
     LogAnd,
     LogOr,
+    Loop,
+    Question,
+    ColonColon,
 }
 
 impl TokenId {
@@ -240,6 +246,9 @@ impl TokenId {
             Token::Shr => self == &TokenId::Shr,
             Token::LogAnd => self == &TokenId::LogAnd,
             Token::LogOr => self == &TokenId::LogOr,
+            Token::Loop => self == &TokenId::Loop,
+            Token::Question => self == &TokenId::Question,
+            Token::ColonColon => self == &TokenId::ColonColon,
         }
     }
 }
@@ -322,6 +331,9 @@ impl Display for TokenId {
             TokenId::Shr => f.write_str(">>"),
             TokenId::LogAnd => f.write_str("&&"),
             TokenId::LogOr => f.write_str("||"),
+            TokenId::Loop => f.write_str("loop"),
+            TokenId::Question => f.write_str("?"),
+            TokenId::ColonColon => f.write_str("::"),
         }
     }
 }
