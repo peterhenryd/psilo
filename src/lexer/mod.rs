@@ -1,7 +1,8 @@
 use std::iter::Peekable;
 use std::str::FromStr;
-use logos::{Logos, Lexer as LogosLexer};
+use logos::{Logos, Lexer as LogosLexer, SpannedIter, Span};
 use crate::lexer::id::TokenId;
+use crate::parser::ast::Spanned;
 use crate::parser::error::{ParseError, ParseResult};
 
 pub mod id;
@@ -35,6 +36,7 @@ pub enum Token<'a> {
     #[token("use")]      Use,
     #[token("where")]    Where,
     #[token("while")]    While,
+    #[token("loop")]     Loop,
     #[token("async")]    Async,
     #[token("await")]    Await,
     #[token("dyn")]      Dyn,
@@ -46,10 +48,12 @@ pub enum Token<'a> {
     #[token("}")]  CloseBrace,
     #[token("[")]  OpenBracket,
     #[token("]")]  CloseBracket,
+    #[token("?")]  Question,
     #[token(".")]  Dot,
     #[token(",")]  Comma,
     #[token(";")]  Semicolon,
     #[token(":")]  Colon,
+    #[token("::")] ColonColon,
     #[token("!=")] NotEq,
     #[token("==")] EqEq,
     #[token("+=")] AddEq,
@@ -92,7 +96,7 @@ pub enum Token<'a> {
     // TODO: this regex needs to be improved
     #[regex("\"([^\"]*)\"", lex_string)]         Str(&'a str),
     
-    #[regex("[a-zA-Z][a-zA-Z0-9]*")]             Ident(&'a str),
+    #[regex("[_]*[a-zA-Z][a-zA-Z0-9_]*")]             Ident(&'a str),
 
     #[error]
     #[regex(r"#(.*)\n", logos::skip)]
@@ -131,23 +135,24 @@ fn lex_char<'a, 'b>(lexer: &'a mut LogosLexer<'b, Token<'b>>) -> char {
 
 fn lex_string<'a, 'b>(lexer: &'a mut LogosLexer<'b, Token<'b>>) -> &'b str {
     let str: &str = lexer.slice();
-    &str[1..str.len() - 2]
+    &str[1..str.len() - 1]
 }
 
 pub struct Lexer<'a> {
-    pub iter: Peekable<LogosLexer<'a, Token<'a>>>,
+    pub iter: Peekable<SpannedIter<'a, Token<'a>>>,
 }
 
 impl<'a> Lexer<'a> {
     #[inline]
     pub fn new(source: &'a str) -> Self {
-        Self { iter: LogosLexer::new(source).peekable() }
+        Self { iter: LogosLexer::new(source).spanned().peekable() }
     }
 
-    pub fn expect(&mut self, id: TokenId) -> ParseResult<'a, ()> {
+    pub fn expect(&mut self, id: TokenId) -> ParseResult<'a, Span> {
         match self.iter.next() {
-            Some(token) => if id.eq(&token) {
-                Ok(())
+            Some((Token::Error, span)) => panic!("{} to {}", span.start, span.end),
+            Some((token, span)) => if id.eq(&token) {
+                Ok(span)
             } else {
                 Err(ParseError::Expected(vec![id], Some(token)))
             }
@@ -155,21 +160,58 @@ impl<'a> Lexer<'a> {
         }
     }
 
+    pub fn expect_ident_spanned(&mut self) -> ParseResult<'a, Spanned<&'a str>> {
+        match self.iter.next() {
+            Some((Token::Ident(s), span)) => Ok(Spanned(span, s)),
+            token => Err(
+                ParseError::Expected(
+                    vec![TokenId::Ident],
+                    token.map(|(t, _)| t)
+                )
+            )
+        }
+    }
+
     pub fn expect_ident(&mut self) -> ParseResult<'a, &'a str> {
         match self.iter.next() {
-            Some(Token::Ident(s)) => Ok(s),
-            token => Err(ParseError::Expected(vec![TokenId::Ident], token))
+            Some((Token::Ident(s), _)) => Ok(s),
+            token => Err(
+                ParseError::Expected(
+                    vec![TokenId::Ident],
+                    token.map(|(t, _)| t)
+                )
+            )
         }
     }
 
     pub fn maybe_expect(&mut self, id: TokenId) -> bool {
         match self.iter.peek() {
-            Some(token) => if id.eq(&token) {
+            Some((token, _)) => if id.eq(&token) {
                 self.iter.next();
                 true
             } else {
                 false
             }
+            None => false
+        }
+    }
+
+    pub fn maybe_expect_span(&mut self, id: TokenId) -> Option<Span> {
+        match self.iter.peek() {
+            Some((token, span)) => if id.eq(&token) {
+                let span = span.clone();
+                self.iter.next();
+                Some(span)
+            } else {
+                None
+            }
+            None => None
+        }
+    }
+
+    pub fn peek_expect(&mut self, id: TokenId) -> bool {
+        match self.iter.peek() {
+            Some((token, _)) => id.eq(&token),
             None => false
         }
     }
