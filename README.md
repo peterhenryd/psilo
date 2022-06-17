@@ -6,8 +6,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/peterhenryd/psilo?color=orange)
 ![GitHub Repo stars](https://img.shields.io/github/stars/peterhenryd/psilo?color=yellow)
 ![Lines of code](https://img.shields.io/tokei/lines/github/peterhenryd/psilo?color=green)
-![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/peterhenryd/psilo?color=blue)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/peterhenryd/psilo/main?color=purple)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/peterhenryd/psilo/main?color=blue)
 
 The psychoactive programming language! Psilo is an experimental language that grants novel methods of intuitive, scalable programming. Click [here](https://discord.gg/svqHSAqtJA) to join the community server (Discord). 
 
