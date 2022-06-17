@@ -16,3 +16,4 @@ edition = "2021"
 # Lexer
 logos = "0.12.1"
 
+derive_more = "0.99.17"
