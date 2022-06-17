@@ -1,5 +1,6 @@
-use std.io;
+use std::io::Stdout;
+use std::io::println;
 
-fn hello_world() -> io {
-  println("Hello, world!");
+fn hello_world() -> Stdout {
+    println("Hello, world!")
 }
